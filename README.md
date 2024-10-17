@@ -1,1 +1,1 @@
-## DecisionTreeClassifier using scikit-learn
+## Decision-Tree Classification using scikit-learn
