@@ -75,4 +75,46 @@
 
 ### `compute_information_gain()`
 
+1. Compute the **total entropy $`\ H(Y) `$**
+   
+    ### $`\ H(Y) = -\sum\limits_{y \in Y} P(y) log_2 P(y) `$
+
+    ```python
+    _, counts = np.unique(y, return_counts = True)
+    probabilities = counts / len(y)
+    total_entropy = -np.sum([p * np.log2(p) for p in probabilities if p > 0])
+    ```
+    
+2. Extract the **top three keywords**
+   
+    ```python
+    top3 = np.argsort(best_model.feature_importances_)[-3:]
+    ```
+
+3. Compute the **conditional entropy $`\ H(Y|X^i) `$** and **Information Gain $`\ IG(Y, X^i) `$** for each keyword
+
+    ### $`\ H(Y|X^i) = \sum\limits_{x \in X^i} P(x) H(Y|X^i = x) `$
+
+    ### $`\ IG(Y, X^i) = H(Y) - H(Y|X^i) `$
+
+    ```python
+    for i in top3:
+        feature_column = X[:, i]
+        values, counts = np.unique(feature_column, return_counts=True)
+
+        # H(Y|Xi)
+        conditional_entropy = 0
+        for value, count in zip(values, counts):
+            index = np.where(feature_column == value)[0]
+            y_subset = y[index]
+            _, target_counts = np.unique(y_subset, return_counts=True)
+            
+            prob_y_given_x = target_counts / len(y_subset)
+            entropy_y_given_x = -np.sum(prob_y_given_x * np.log2(prob_y_given_x))
+
+            conditional_entropy += (count / len(feature_column)) * entropy_y_given_x
+
+        # IG(Y, Xi) <- H(Y) - H(Y|Xi)
+        info_gain_dict[vectorizer.get_feature_names_out()[i]] = total_entropy - conditional_entropy
+    ```
 
