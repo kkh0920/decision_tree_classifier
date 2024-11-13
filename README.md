@@ -1,5 +1,6 @@
-## Real / Fake News Classification using scikit-learn
+# Real / Fake News Classification using scikit-learn
 
+- Learning how to use the DecisionTreeClassifier in scikit-learn by building a fake news classifier
 
 ## Method
 
