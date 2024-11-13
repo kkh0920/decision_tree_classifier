@@ -8,7 +8,7 @@
 - [compute_information_gain()](#compute_information_gain) : Compute information gain for the top three keywords of the best model
 
 
-### `load_data()`
+### load_data()
 
 1. Load data from **clean_fake.txt** and **clean_real.txt**
 
@@ -48,7 +48,7 @@
     ```
 
 
-### `select_model()`
+### select_model()
 
 - Select the **Decision Tree Classifier** with the **best accuracy in the validation set**
 - Criterion: **entropy, log_loss, gini**
@@ -73,7 +73,7 @@
                 best_model = model
     ```
 
-### `compute_information_gain()`
+### compute_information_gain()
 
 1. Compute the **total entropy $`\ H(Y) `$**
    
