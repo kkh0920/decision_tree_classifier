@@ -2,9 +2,9 @@
 
 ## Method
 
-- [load_data()](load_data) : Load data and split it into train, validation, and test sets
-- [select_model()](select_model) : Select the best model using DecisionTreeClassifier with different criterion and max_depth
-- [compute_information_gain()](compute_information_gain) : Compute information gain for the top three keywords of the best model
+- [load_data()](#load_data) : Load data and split it into train, validation, and test sets
+- [select_model()](#select_model) : Select the best model using DecisionTreeClassifier with different criterion and max_depth
+- [compute_information_gain()](#compute_information_gain) : Compute information gain for the top three keywords of the best model
 
 ### `load_data()`
 
