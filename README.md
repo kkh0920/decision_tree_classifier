@@ -21,7 +21,7 @@
     ```
     
 
-2. Data Preprocessing with **CountVectorizer** 
+2. Data preprocessing with **CountVectorizer** 
 
     ```python
     vectorizer = CountVectorizer()
@@ -92,7 +92,7 @@
     top3 = np.argsort(best_model.feature_importances_)[-3:]
     ```
 
-3. Compute the **conditional entropy $`\ H(Y|X^i) `$** and **Information Gain $`\ IG(Y, X^i) `$** for each keyword
+3. Compute the **conditional entropy $`\ H(Y|X^i) `$** and **information gain $`\ IG(Y, X^i) `$** for each keyword
 
     ### $`\ H(Y|X^i) = \sum\limits_{x \in X^i} P(x) H(Y|X^i = x) `$
 
