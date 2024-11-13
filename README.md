@@ -119,3 +119,16 @@
         info_gain_dict[vectorizer.get_feature_names_out()[i]] = total_entropy - conditional_entropy
     ```
 
+
+## Observation
+
+- ### plot the accuracy for each criterion
+
+<img width="700" alt="plot" src="https://github.com/user-attachments/assets/b9e9fc2d-80da-4974-8766-7f9d2e48c912">
+
+
+- ### plot the decision tree of the best model with max_depth = 2
+
+<img width="700" alt="tree" src="https://github.com/user-attachments/assets/0cd9b279-4b2b-4179-ad24-a6c87eafebd7">
+
+
