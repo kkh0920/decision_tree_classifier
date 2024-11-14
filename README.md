@@ -132,13 +132,16 @@
     |        **X7**       |   2   |      **0 (Fake)**     |
     |         ...         |  ...  |           ...         |
 
-    1. conditional entropy of **count = 0**
+    1. conditional entropy of **count = 0**:
+
        $`\ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right) `$
 
-    2. conditional entropy of **count = 1**
+    2. conditional entropy of **count = 1**:
+
        $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
  
-    3. conditional entropy of **count = 2**
+    3. conditional entropy of **count = 2**:
+
        $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
     
     4. ...
@@ -148,9 +151,9 @@
   
         $`\ = \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
     
-        $`\   + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+        $`\ + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
       
-        $`\   + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+        $`\ + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
       
         $`\ + `$ ... 
 
