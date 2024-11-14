@@ -8,7 +8,7 @@
 - [select_model()](#select_model) : Select the best model using DecisionTreeClassifier with different criterion and max_depth
 - [compute_information_gain()](#compute_information_gain) : Compute information gain for the top three keywords of the best model
 
-
+&nbsp;
 ### load_data()
 
 1. Load data from **clean_fake.txt** and **clean_real.txt**
@@ -143,7 +143,8 @@
     
     4. ...
        
-
+    &nbsp;
+  
     **$`\ \therefore \;\; H(Y|X^\left(i\right)) `$**
 
   $`\ \quad = \quad \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
