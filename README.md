@@ -8,7 +8,6 @@
 - [select_model()](#select_model) : Select the best model using DecisionTreeClassifier with different criterion and max_depth
 - [compute_information_gain()](#compute_information_gain) : Compute information gain for the top three keywords of the best model
 
-&nbsp;
 ### load_data()
 
 1. Load data from **clean_fake.txt** and **clean_real.txt**
@@ -121,7 +120,7 @@
 
 - example (conditional entropy of the keyword)
 
-    |   feature_column    | count |       y_subset        |
+    |   feature_column    | value |           y           |
     |---------------------|:-----:|:---------------------:|
     |        **X1**       |   0   |      **1 (Real)**     |
     |        **X2**       |   0   |      **0 (Fake)**     |
@@ -132,13 +131,13 @@
     |        **X7**       |   2   |      **0 (Fake)**     |
     |         ...         |  ...  |           ...         |
 
-    1. conditional entropy of **count = 0**:
+    1. conditional entropy of **value = 0**:
        $`\ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right) `$
 
-    2. conditional entropy of **count = 1**:
+    2. conditional entropy of **value = 1**:
        $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
  
-    3. conditional entropy of **count = 2**:
+    3. conditional entropy of **value = 2**:
        $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
     
     4. ...
@@ -147,14 +146,15 @@
   
     **$`\ \therefore \;\; H(Y|X^\left(i\right)) `$**
 
-  $`\ \quad = \quad \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
+  $`\ \quad = \quad \left(\frac{3}{N}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
 
-  $`\ \qquad + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+  $`\ \qquad + \left(\frac{2}{N}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
 
-  $`\ \qquad + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+  $`\ \qquad + \left(\frac{2}{N}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
 
   $`\ \qquad + `$ ... 
 
+&nbsp;
   
 ## Observation
 
