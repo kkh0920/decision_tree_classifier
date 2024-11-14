@@ -118,7 +118,7 @@
         info_gain_dict[vectorizer.get_feature_names_out()[i]] = total_entropy - conditional_entropy
     ```
 
-- example (conditional entropy of the keyword)
+- example (conditional entropy of the one keyword)
 
     |   feature_column    | value |           y           |
     |---------------------|:-----:|:---------------------:|
