@@ -48,7 +48,7 @@
     X_valid, X_test, y_valid, y_test = train_test_split(X_temp, y_temp, test_size = 0.5)
     ```
 
-
+&nbsp;
 ### select_model()
 
 - Select the **Decision Tree Classifier** with the **best accuracy in the validation set**
@@ -73,12 +73,12 @@
                 best_score = score
                 best_model = model
     ```
-
+&nbsp;
 ### compute_information_gain()
 
 1. Compute the **total entropy $`\ H(Y) `$**
    
-    ### $`\ H(Y) = -\sum\limits_{y \in Y} P(y) log_2 P(y) `$
+    ### $`\ H(Y) = -\sum\limits_{y \in Y} P(y) \, log_2 P(y) `$
 
     ```python
     _, counts = np.unique(y, return_counts = True)
@@ -94,7 +94,7 @@
 
 3. Compute the **conditional entropy $`\ H(Y|X^\left(i\right)) `$** and **information gain $`\ IG(Y, X^\left(i\right)) `$** for each keyword
 
-    ### $`\ H(Y|X^\left(i\right)) = \sum\limits_{x \in X^\left(i\right)} P(x) H(Y|X^\left(i\right) = x)`$
+    ### $`\ H(Y|X^\left(i\right)) = \sum\limits_{x \in X^\left(i\right)} P(x) \, H(Y|X^\left(i\right) = x)`$
 
     ### $`\ IG(Y, X^\left(i\right)) = H(Y) - H(Y|X^\left(i\right)) `$
 
@@ -142,17 +142,17 @@
        $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
     
     4. ...
+       
 
-    
-    - **$`\ H(Y|X^\left(i\right)) `$**
-  
-        $`\ = \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
-    
-        $`\ + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
-      
-        $`\ + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
-      
-        $`\ + `$ ... 
+    **$`\ \therefore \;\; H(Y|X^\left(i\right)) `$**
+
+  $`\ \quad = \quad \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
+
+  $`\ \qquad + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+
+  $`\ \qquad + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+
+  $`\ \qquad + `$ ... 
 
   
 ## Observation
