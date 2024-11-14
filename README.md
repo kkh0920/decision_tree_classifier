@@ -92,11 +92,11 @@
     top3 = np.argsort(best_model.feature_importances_)[-3:]
     ```
 
-3. Compute the **conditional entropy $`\ H(Y|X^i) `$** and **information gain $`\ IG(Y, X^i) `$** for each keyword
+3. Compute the **conditional entropy $`\ H(Y|X^\left(i\right)) `$** and **information gain $`\ IG(Y, X^\left(i\right)) `$** for each keyword
 
-    ### $`\ H(Y|X^i) = \sum\limits_{x \in X^i} P(x) H(Y|X^i = x) `$
+    ### $`\ H(Y|X^\left(i\right)) = \sum\limits_{x \in X^\left(i\right)} P(x) H(Y|X^\left(i\right) = x)`$
 
-    ### $`\ IG(Y, X^i) = H(Y) - H(Y|X^i) `$
+    ### $`\ IG(Y, X^\left(i\right)) = H(Y) - H(Y|X^\left(i\right)) `$
 
     ```python
     for i in top3:
@@ -119,7 +119,42 @@
         info_gain_dict[vectorizer.get_feature_names_out()[i]] = total_entropy - conditional_entropy
     ```
 
+- example (conditional entropy of the keyword)
 
+    |   feature_column    | count |       y_subset        |
+    |---------------------|:-----:|:---------------------:|
+    |        **X1**       |   0   |      **1 (Real)**     |
+    |        **X2**       |   0   |      **0 (Fake)**     |
+    |        **X3**       |   0   |      **1 (Real)**     |
+    |        **X4**       |   1   |      **1 (Real)**     |
+    |        **X5**       |   1   |      **0 (Fake)**     |
+    |        **X6**       |   2   |      **1 (Real)**     |
+    |        **X7**       |   2   |      **0 (Fake)**     |
+    |         ...         |  ...  |           ...         |
+
+    1. conditional entropy of **count = 0**
+       $`\ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right) `$
+
+    2. conditional entropy of **count = 1**
+       $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
+ 
+    3. conditional entropy of **count = 2**
+       $`\ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) `$
+    
+    4. ...
+
+    
+    - **$`\ H(Y|X^\left(i\right)) `$**
+  
+        $`\ = \left(\frac{3}{7}\right) \times \left\{ - \left(\frac{2}{3}\right) log_2 \left(\frac{2}{3}\right) - \left(\frac{1}{3}\right) log_2 \left(\frac{1}{3}\right)\right\} `$
+    
+        $`\   + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+      
+        $`\   + \left(\frac{2}{7}\right) \times \left\{ - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right) - \left(\frac{1}{2}\right) log_2 \left(\frac{1}{2}\right)\right\} `$
+      
+        $`\ + `$ ... 
+
+  
 ## Observation
 
 - ### plot the accuracy for each criterion
